@@ -2,7 +2,7 @@
   "voters": [
     {
       "id": "1",
-      "email": "hema_kothari@intuit.com",
+      "email": "444",
       "firstname": "Hema",
       "lastname": "Kothari",
       "address": "2600 Marine Way",
@@ -35,7 +35,7 @@
     {
       "id": "1",
       "election_id": "1",
-      "user_email": "hema_kothari@intuit.com",
+      "user_email": "444",
       "questions": [
         {
           "id": "1",

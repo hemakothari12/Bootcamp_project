@@ -9,11 +9,13 @@ export const VotePageContainer = () => {
 
     const elections = useSelector(state => state.elections);
     const electionId = useSelector(state => state.editElectionId);
+    const questions = useSelector(state => state.questions);
 
     const dispatchProps = bindActionCreators({
         onVerifyUser: verifyUser,
-        onRefreshElection: refreshElection
+        onRefreshElection: refreshElection,
     }, useDispatch());
 
-    return <VotePage {...dispatchProps} elections={elections} electionId={electionId} />;
+    return <VotePage {...dispatchProps} elections={elections} electionId={electionId}
+                     questions={questions} />;
 };

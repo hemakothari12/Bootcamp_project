@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {VoterInput} from "../voter-tool/VoterInput";
-import {ElectionList} from "../voter-tool/ElectionList";
+import {QuestionList} from "../voter-tool/QuestionList";
 
 export const VotePage = ({
     elections,
@@ -15,6 +15,8 @@ export const VotePage = ({
 
     }, []);
 
+    console.log(elections);
+
     return (
         <>
             <header>
@@ -25,8 +27,8 @@ export const VotePage = ({
                 <p>Welcome Voter!</p>
             </section>
 
-            { electionId != -1
-                ? <ElectionList elections={elections} />
+            { electionId !== -1
+                ? <QuestionList questions={elections.find(e => e.id === electionId).questions} />
                 : <VoterInput buttonText="Submit" elections={elections} onVerifyUser={verifyUser} />}
         </>
     );

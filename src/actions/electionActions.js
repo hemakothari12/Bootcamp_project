@@ -9,7 +9,7 @@ export const createRefreshElectionRequestRequestAction = () => ({ type: REFRESH_
 export const createRefreshElectionDoneRequestAction = elections => ({ type: REFRESH_ELECTION_DONE_ACTION, elections });
 export const createVerifyUserRequestAction = userDetail => ({ type: VERIFY_USER_REQUEST_ACTION, userDetail });
 export const createVerifyUserVotedRequestAction = votingDetails => ({ type: VERIFY_USER_VOTED_REQUEST_ACTION, votingDetails });
-export const createVoteElectionRequestAction = electionId => ({ type: VOTE_ELECTION_ACTION, electionId });
+export const createVoteElectionAction = electionId => ({ type: VOTE_ELECTION_ACTION, electionId });
 
 export const refreshElection = () => {
 
@@ -53,11 +53,11 @@ export const verifyUserVoted = votingDetails => {
                 if(ballots.length >= 1) {
                     alert('You have already voted in this election');
                 } else {
-                   dispatch(createVoteElectionAction(votingDetails.election_id));
+                    dispatch(createVoteElectionAction(votingDetails.election_id));
                 }
             });
     };
 
 }
 
-export const createVoteElectionAction = electionId => ({ type: VOTE_ELECTION_ACTION, electionId });
+
