@@ -2,50 +2,56 @@ import React from 'react';
 
 import { useForm } from '../../hooks/useForm';
 
-export const VoterEditRow = ({ car, onSaveCar, onCancelCar: cancelCar }) => {
+export const VoterEditRow = ({ voter, onSaveVoter, onCancelVoter: cancelVoter }) => {
 
-  const [ carForm, change ] = useForm({
-    ...car
+  const [ voterForm, change ] = useForm({
+    ...voter
   });
 
-  const saveCar = () => {
-    onSaveCar({
-      ...carForm,
-      id: car.id,
+  const saveVoter = () => {
+    onSaveVoter({
+      ...voterForm,
+      id: voter.id,
     });
   };
 
   return (
     <tr>
-      <DataCell>{car.id}</DataCell>
-      <DataCell>
-        <input type="text" id="make-input" name="make"
-               value={carForm.make} onChange={change} />
-      </DataCell>
-      <DataCell>
-        <input type="text" id="model-input" name="model"
-               value={carForm.model} onChange={change} />
-      </DataCell>
-      <DataCell>
-        <input type="number" id="year-input" name="year"
-               value={carForm.year} onChange={change} />
-      </DataCell>
-      <DataCell>
-        <input type="text" id="color-input" name="color"
-               value={carForm.color} onChange={change} />
-      </DataCell>
-      <DataCell>
-        <input type="number" id="price-input" name="price"
-               value={carForm.price} onChange={change} />
-      </DataCell>
-      <DataCell>
-        <button type="button" onClick={saveCar}>
+      <td><input type="checkbox" id={voter.id} name={voter.email} disabled/></td>
+      <td>{voter.id}</td>
+      <td>{voter.email}</td>
+      <td>
+        <input type="text" id="firstname-input" name="firstname"
+               value={voterForm.firstname} onChange={change} />
+      </td>
+      <td>
+        <input type="text" id="lastname-input" name="lastname"
+               value={voterForm.lastname} onChange={change} />
+      </td>
+      <td>
+        <input type="text" id="address-input" name="address"
+               value={voterForm.address} onChange={change} />
+      </td>
+      <td>
+        <input type="text" id="county_city-input" name="county_city"
+               value={voterForm.county_city} onChange={change} />
+      </td>
+      <td>
+        <input type="text" id="birthdate-input" name="birthdate"
+               value={voterForm.birthdate} onChange={change} />
+      </td>
+      <td>
+        <input type="number" id="phone-input" name="phone"
+               value={voterForm.phone} onChange={change} />
+      </td>
+      <td>
+        <button type="button" onClick={saveVoter}>
           Save
         </button>
-        <button type="button" onClick={cancelCar}>
+        <button type="button" onClick={cancelVoter}>
           Cancel
         </button>
-      </DataCell>
+      </td>
     </tr>
   );
 
