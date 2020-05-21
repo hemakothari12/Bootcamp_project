@@ -12,6 +12,8 @@ import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 
+import { VoterRegistrationPage } from './pages/VoterRegistrationPage';
+
 export const App = () => {
   return (
       <PageLayout>
@@ -24,6 +26,9 @@ export const App = () => {
             </Route>
             <Route path="/about">
               <AboutPage />
+            </Route>
+            <Route path="/registration">
+              <VoterRegistrationPage />
             </Route>
           </Switch>
         </Content>

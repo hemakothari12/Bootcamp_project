@@ -1,8 +1,7 @@
 import React from 'react';
-import { Switch, Route, } from 'react-router-dom';
 
-import { RegisterAVoterPage } from './RegisterAVoterPage';
-import { ViewRegisteredVotersPage } from './ViewRegisteredVotersPage';
+//import { RegisterAVoterPage } from './RegisterAVoterPage';
+//import { ViewRegisteredVotersPage } from './ViewRegisteredVotersPage';
 
 const goRegisterAVoter = () => {
     console.log('Let\'s register a voter!');
