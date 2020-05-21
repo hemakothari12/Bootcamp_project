@@ -3,19 +3,20 @@ import {VotePage} from "../pages/VotePage";
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { verifyUser, refreshElection } from '../../actions/electionActions';
+import { verifyUser, refreshElection, castVote} from '../../actions/electionActions';
 
 export const VotePageContainer = () => {
 
     const elections = useSelector(state => state.elections);
     const electionId = useSelector(state => state.editElectionId);
-    const questions = useSelector(state => state.questions);
+    const voterEmail = useSelector(state => state.voterEmail);
 
     const dispatchProps = bindActionCreators({
         onVerifyUser: verifyUser,
         onRefreshElection: refreshElection,
+        onCastVote: castVote,
     }, useDispatch());
 
     return <VotePage {...dispatchProps} elections={elections} electionId={electionId}
-                     questions={questions} />;
+                     voterEmail={voterEmail} />;
 };

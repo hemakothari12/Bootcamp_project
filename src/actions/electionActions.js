@@ -4,12 +4,16 @@ export const REFRESH_ELECTION_DONE_ACTION = 'REFRESH_ELECTION_DONE';
 export const VERIFY_USER_REQUEST_ACTION = 'VERIFY_USER_REQUEST';
 export const VERIFY_USER_VOTED_REQUEST_ACTION = 'VERIFY_USER_VOTED_REQUEST';
 export const VOTE_ELECTION_ACTION = 'VOTE_ELECTION';
+export const SET_VOTER_EMAIL_ACTION = 'SET_VOTER_EMAIL';
+export const CAST_VOTE_ACTION = 'CAST_VOTE_EMAIL';
 
 export const createRefreshElectionRequestRequestAction = () => ({ type: REFRESH_ELECTION_REQUEST_ACTION });
 export const createRefreshElectionDoneRequestAction = elections => ({ type: REFRESH_ELECTION_DONE_ACTION, elections });
 export const createVerifyUserRequestAction = userDetail => ({ type: VERIFY_USER_REQUEST_ACTION, userDetail });
 export const createVerifyUserVotedRequestAction = votingDetails => ({ type: VERIFY_USER_VOTED_REQUEST_ACTION, votingDetails });
 export const createVoteElectionAction = electionId => ({ type: VOTE_ELECTION_ACTION, electionId });
+export const createSetVoterEmailAction = voterEmail => ({ type: SET_VOTER_EMAIL_ACTION, voterEmail });
+export const createCastVoteAction = ballot => ({ type: CAST_VOTE_ACTION, ballot });
 
 export const refreshElection = () => {
 
@@ -54,10 +58,25 @@ export const verifyUserVoted = votingDetails => {
                     alert('You have already voted in this election');
                 } else {
                     dispatch(createVoteElectionAction(votingDetails.election_id));
+                    dispatch(createSetVoterEmailAction(votingDetails.voter_email));
                 }
             });
     };
 
 }
+
+export const castVote = ballot => {
+
+    return dispatch => {
+
+        dispatch(createCastVoteAction(ballot));
+        return fetch('http://localhost:3060/ballots', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(ballot),
+        })
+    };
+
+};
 
 

@@ -1,7 +1,7 @@
 import {
   REFRESH_ELECTION_DONE_ACTION, REFRESH_ELECTION_REQUEST_ACTION,
     VOTE_ELECTION_ACTION, VERIFY_USER_VOTED_REQUEST_ACTION,
-    VERIFY_USER_REQUEST_ACTION, FETCH_QUESTIONS_ACTION
+    VERIFY_USER_REQUEST_ACTION, FETCH_QUESTIONS_ACTION, SET_VOTER_EMAIL_ACTION
 } from '../actions/electionActions';
 import { combineReducers } from "redux";
 
@@ -21,16 +21,22 @@ export const editElectionIdReducer = (editElectionId = -1, action) => {
     return action.electionId;
   }
 
-  if ([ REFRESH_ELECTION_DONE_ACTION, VERIFY_USER_REQUEST_ACTION, VERIFY_USER_REQUEST_ACTION,
-    REFRESH_ELECTION_REQUEST_ACTION, VERIFY_USER_VOTED_REQUEST_ACTION].includes(action.type)) {
-    return -1;
-  }
-
   return editElectionId;
 
 };
 
+export const voterEmailReducer = (voterEmail = '', action) => {
+
+  if (action.type === SET_VOTER_EMAIL_ACTION) {
+    return action.voterEmail;
+  }
+
+  return voterEmail;
+
+}
+
 export const electionReducer = combineReducers({
   editElectionId: editElectionIdReducer,
   elections: electionsReducer,
+  voterEmail: voterEmailReducer,
 });

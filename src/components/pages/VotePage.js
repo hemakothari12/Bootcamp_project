@@ -5,8 +5,10 @@ import {QuestionList} from "../voter-tool/QuestionList";
 export const VotePage = ({
     elections,
     electionId,
+    voterEmail,
     onRefreshElection,
-    onVerifyUser: verifyUser
+    onVerifyUser: verifyUser,
+    onCastVote: castVote,
 }) => {
 
     useEffect(() => {
@@ -28,7 +30,10 @@ export const VotePage = ({
             </section>
 
             { electionId !== -1
-                ? <QuestionList questions={elections.find(e => e.id === electionId).questions} />
+                ? <QuestionList questions={elections.find(e => e.id === electionId).questions}
+                                electionId={electionId}
+                                voterEmail={voterEmail}
+                                buttonText="Cast Vote" onCastVote={castVote}/>
                 : <VoterInput buttonText="Submit" elections={elections} onVerifyUser={verifyUser} />}
         </>
     );
