@@ -33,13 +33,23 @@
   ],
   "ballots": [
     {
-      "id": "",
-      "election_id": "",
-      "voter_id": "",
-      "questions": [{
-        "id": "",
-        "answer": ""
-      }]
+      "id": "1",
+      "election_id": "1",
+      "voter_id": "1",
+      "questions": [
+        {
+          "id": "1",
+          "answer": true
+        },
+        {
+          "id": "2",
+          "answer": false
+        },
+        {
+          "id": "3",
+          "answer": true
+        }
+      ]
     }
   ],
   "elections": [
