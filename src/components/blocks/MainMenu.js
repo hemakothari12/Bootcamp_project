@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './MainMenu.css';  
+import './MainMenu.css';
 
 export const MainMenu = () => {
 
@@ -9,6 +9,7 @@ export const MainMenu = () => {
   const menuItems = [
     { id: 1, url: '/', caption: 'Home' },
     { id: 2, url: '/about', caption: 'About' },
+    { id: 3, url: '/registration', caption: 'Voter Registration' },
   ];
 
   return (
