@@ -11,6 +11,7 @@ import { Content } from './blocks/Content';
 import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
+import { VotePage } from './pages/VotePage';
 
 export const App = () => {
 
@@ -25,6 +26,9 @@ export const App = () => {
             </Route>
             <Route path="/about">
               <AboutPage />
+            </Route>
+            <Route path="/vote">
+              <VotePage />
             </Route>
           </Switch>
         </Content>

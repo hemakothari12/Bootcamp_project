@@ -9,6 +9,7 @@ export const MainMenu = () => {
   const menuItems = [
     { id: 1, url: '/', caption: 'Home' },
     { id: 2, url: '/about', caption: 'About' },
+    { id: 3, url: '/vote', caption: 'Vote' },
   ];
 
   return (
