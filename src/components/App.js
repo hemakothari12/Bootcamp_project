@@ -12,6 +12,10 @@ import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 
+import { VoterRegistrationPage } from './pages/VoterRegistrationPage';
+import { RegisterAVoterPage } from './pages/RegisterAVoterPage';
+import { ViewRegisteredVotersPage } from './pages/ViewRegisteredVotersPage';
+
 export const App = () => {
 
   return (
@@ -26,6 +30,15 @@ export const App = () => {
             <Route path="/about">
               <AboutPage />
             </Route>
+            <Route path="/registration">
+              <VoterRegistrationPage />
+            </Route>
+            <Route path="/register">
+                <RegisterAVoterPage />
+            </Route>
+            <Route path="/voters">
+                <ViewRegisteredVotersPage />
+            </Route>
           </Switch>
         </Content>
         <Switch>
@@ -34,6 +47,10 @@ export const App = () => {
           </Route>
           <Route path="/">
             <Sidebar className="home-page" />
+          </Route>
+
+          <Route path="/registration">
+            <Sidebar className="registration-page" />
           </Route>
         </Switch>
         <PageFooter />
