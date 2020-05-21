@@ -1,14 +1,23 @@
 {
   "voters": [
     {
-      "id firstname lastname address county_city birthdate email phone"
+      "id": "",
+      "firstname": "",
+      "lastname": "",
+      "address": "",
+      "county_city": "",
+      "birthdate": "",
+      "email": "",
+      "phone": ""
     },
 
   ],
   "ballots": [
     {
-      "id election_id voter_id": "",
-      "question" {
+      "id": "",
+      "election_id": "",
+      "voter_id": "",
+      "question":  {
         "id": "",
         "answer": ""
       }
