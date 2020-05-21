@@ -12,6 +12,52 @@ import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { VotePage } from './pages/VotePage';
+import {VotePageContainer} from "./containers/VoterPageContainer";
+
+const elections = [
+    {
+        "id":  "1",
+        "name": "Jan Election",
+        "questions": [
+            {
+                "id": "1",
+                "question": "Is the Sky Blue?"
+            },
+            {
+                "id": "2",
+                "question": "Do you like flowers?"
+            },
+            {
+                "id": "3",
+                "question": "Do you like Intuit?"
+            }
+        ]
+    },
+    {
+        "id":  "2",
+        "name": "Feb Election",
+        "questions": [
+            {
+                "id": "1",
+                "question": "Do you like React?"
+            },
+            {
+                "id": "2",
+                "question": "Do you ride a motorcycle?"
+            }
+        ]
+    },
+    {
+        "id":  "3",
+        "name": "Mar Election",
+        "questions": [
+            {
+                "id": "1",
+                "question": "Is your favorite color green?"
+            }
+        ]
+    }
+];
 
 export const App = () => {
 
@@ -28,7 +74,7 @@ export const App = () => {
               <AboutPage />
             </Route>
             <Route path="/vote">
-              <VotePage />
+              <VotePageContainer elections={elections} />
             </Route>
           </Switch>
         </Content>
