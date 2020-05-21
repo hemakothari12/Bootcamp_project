@@ -2,14 +2,14 @@ import React from 'react';
 
 import { useForm } from '../../hooks/useForm';
 
-export const VoterInput = ({ buttonText, onSubmitElection, elections }) => {
+export const VoterInput = ({ buttonText, onVerifyUser, elections }) => {
 
     const [ electionForm, change, resetElectionForm ] = useForm({
         election_name: '', voter_email: '',
     });
 
     const submitElection = () => {
-        onSubmitElection({ ...electionForm });
+        onVerifyUser({ ...electionForm });
         resetElectionForm();
     };
 

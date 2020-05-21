@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Switch, Route,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import { PageLayout } from './blocks/PageLayout';
 import { PageHeader } from './blocks/PageHeader';
@@ -11,53 +12,53 @@ import { Content } from './blocks/Content';
 import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
-import { VotePage } from './pages/VotePage';
-import {VotePageContainer} from "./containers/VoterPageContainer";
+import { VotePageContainer } from "./containers/VoterPageContainer";
+import {ballotStore} from "../store/ballotStore";
 
-const elections = [
-    {
-        "id":  "1",
-        "name": "Jan Election",
-        "questions": [
-            {
-                "id": "1",
-                "question": "Is the Sky Blue?"
-            },
-            {
-                "id": "2",
-                "question": "Do you like flowers?"
-            },
-            {
-                "id": "3",
-                "question": "Do you like Intuit?"
-            }
-        ]
-    },
-    {
-        "id":  "2",
-        "name": "Feb Election",
-        "questions": [
-            {
-                "id": "1",
-                "question": "Do you like React?"
-            },
-            {
-                "id": "2",
-                "question": "Do you ride a motorcycle?"
-            }
-        ]
-    },
-    {
-        "id":  "3",
-        "name": "Mar Election",
-        "questions": [
-            {
-                "id": "1",
-                "question": "Is your favorite color green?"
-            }
-        ]
-    }
-];
+// const elections = [
+//     {
+//         "id":  "1",
+//         "name": "Jan Election",
+//         "questions": [
+//             {
+//                 "id": "1",
+//                 "question": "Is the Sky Blue?"
+//             },
+//             {
+//                 "id": "2",
+//                 "question": "Do you like flowers?"
+//             },
+//             {
+//                 "id": "3",
+//                 "question": "Do you like Intuit?"
+//             }
+//         ]
+//     },
+//     {
+//         "id":  "2",
+//         "name": "Feb Election",
+//         "questions": [
+//             {
+//                 "id": "1",
+//                 "question": "Do you like React?"
+//             },
+//             {
+//                 "id": "2",
+//                 "question": "Do you ride a motorcycle?"
+//             }
+//         ]
+//     },
+//     {
+//         "id":  "3",
+//         "name": "Mar Election",
+//         "questions": [
+//             {
+//                 "id": "1",
+//                 "question": "Is your favorite color green?"
+//             }
+//         ]
+//     }
+// ];
 
 export const App = () => {
 
@@ -74,7 +75,9 @@ export const App = () => {
               <AboutPage />
             </Route>
             <Route path="/vote">
-              <VotePageContainer elections={elections} />
+                <Provider store={ballotStore}>
+                    <VotePageContainer />
+                </Provider>
             </Route>
           </Switch>
         </Content>

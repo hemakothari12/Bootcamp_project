@@ -4,7 +4,7 @@ import {ElectionList} from "../voter-tool/ElectionList";
 
 export const VotePage = ({
     elections,
-    onSubmitElection: submitElection
+    onVerifyUser: verifyUser
 }) => {
 
     return (
@@ -22,7 +22,7 @@ export const VotePage = ({
             </section>
 
             <section>
-                <VoterInput buttonText="Submit" elections={elections} onSubmitElection={submitElection} />
+                <VoterInput buttonText="Submit" elections={elections} onVerifyUser={verifyUser} />
             </section>
         </>
     );

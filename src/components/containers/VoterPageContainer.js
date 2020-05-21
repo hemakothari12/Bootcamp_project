@@ -1,28 +1,18 @@
 import React from 'react';
 import {VotePage} from "../pages/VotePage";
-// import { bindActionCreators } from 'redux';
-// import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-// import {
-//     addColor, deleteColor,
-//     refreshColors,
-// } from '../../actions/colorActions';
+import { verifyUser } from '../../actions/voteActions';
 
-// import { ColorToolPage } from '../pages/ColorToolPage';
 
-export const VotePageContainer = ({ elections }) => {
+export const VotePageContainer = () => {
 
-    const verifyUser = (electionData) => {
-        console.log(electionData);
-    }
+    const ballots = useSelector(state => state);
 
-    // const colors = useSelector(state => state);
+    const dispatchProps = bindActionCreators({
+        onVerifyUser: verifyUser,
+    }, useDispatch());
 
-    // const dispatchProps = bindActionCreators({
-    //     onAddColor: addColor,
-    //     onDeleteColor: deleteColor,
-    //     onRefreshColors: refreshColors,
-    // }, useDispatch());
-
-    return <VotePage elections={elections} onSubmitElection={verifyUser} />;
+    return <VotePage ballots={ballots} {...dispatchProps} />;
 };
