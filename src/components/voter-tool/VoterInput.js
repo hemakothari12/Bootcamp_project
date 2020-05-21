@@ -18,6 +18,7 @@ export const VoterInput = ({ buttonText, onVerifyUser, elections }) => {
             <div>
                 <label htmlFor="election-name-dropdown">Election Name:</label>
                 <select name="election_name" onChange={change}>
+                    <option>Select an Election</option>
                     {elections.map(e => <option key={e.id}
                                                 value={e.id}
                                                 >{e.name}</option>)}

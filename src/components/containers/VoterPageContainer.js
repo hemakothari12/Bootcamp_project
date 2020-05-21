@@ -5,8 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { verifyUser } from '../../actions/voteActions';
 
-
-export const VotePageContainer = () => {
+export const VotePageContainer = ({ elections }) => {
 
     const ballots = useSelector(state => state);
 
@@ -14,5 +13,5 @@ export const VotePageContainer = () => {
         onVerifyUser: verifyUser,
     }, useDispatch());
 
-    return <VotePage ballots={ballots} {...dispatchProps} />;
+    return <VotePage ballots={ballots} {...dispatchProps} elections={elections} />;
 };

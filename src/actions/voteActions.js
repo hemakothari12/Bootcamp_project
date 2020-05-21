@@ -22,12 +22,13 @@ export const refreshBallot = () => {
 
 }
 
-export const verifyUser = () => {
+export const verifyUser = userDetail => {
+    console.log(userDetail);
 
     return dispatch => {
 
-      dispatch(createRefreshBallotRequestAction());
-      return fetch('http://localhost:3060/ballots')
+      dispatch(createRefreshBallotRequestAction(userDetail));
+      return fetch('http://localhost:3060/ballots?election_name=' + (userDetail.election_name) +'&voter_email=' + (userDetail.voter_email) )
           .then(res => res.json())
           // .then(ballots => dispatch(createRefreshBallotDoneAction(ballots)));
           .then(ballots => console.log(ballots));
