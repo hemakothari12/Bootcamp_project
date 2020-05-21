@@ -13,7 +13,7 @@ import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { VotePageContainer } from "./containers/VoterPageContainer";
-import {ballotStore} from "../store/ballotStore";
+import {electionStore} from "../store/electionStore";
 
 const elections = [
     {
@@ -75,7 +75,7 @@ export const App = () => {
               <AboutPage />
             </Route>
             <Route path="/vote">
-                <Provider store={ballotStore}>
+                <Provider store={electionStore}>
                     <VotePageContainer elections={elections} />
                 </Provider>
             </Route>

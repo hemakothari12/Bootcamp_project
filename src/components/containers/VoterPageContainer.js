@@ -3,15 +3,17 @@ import {VotePage} from "../pages/VotePage";
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { verifyUser } from '../../actions/voteActions';
+import { verifyUser } from '../../actions/ballotsActions';
+import { refreshElection } from '../../actions/electionActions'
 
-export const VotePageContainer = ({ elections }) => {
+export const VotePageContainer = () => {
 
-    const ballots = useSelector(state => state);
+    const elections = useSelector(state => state);
 
     const dispatchProps = bindActionCreators({
         onVerifyUser: verifyUser,
+        onRefreshElection: refreshElection
     }, useDispatch());
 
-    return <VotePage ballots={ballots} {...dispatchProps} elections={elections} />;
+    return <VotePage {...dispatchProps} elections={elections} />;
 };

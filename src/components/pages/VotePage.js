@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {VoterInput} from "../voter-tool/VoterInput";
-import {ElectionList} from "../voter-tool/ElectionList";
 
 export const VotePage = ({
     elections,
+    onRefreshElection,
     onVerifyUser: verifyUser
 }) => {
+
+    useEffect(() => {
+
+        onRefreshElection();
+
+    }, []);
 
     return (
         <>
@@ -14,11 +20,7 @@ export const VotePage = ({
             </header>
 
             <section>
-                <p>Welcome Vote!</p>
-            </section>
-
-            <section>
-                <ElectionList elections={elections} />
+                <p>Welcome Voter!</p>
             </section>
 
             <section>
