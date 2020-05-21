@@ -1,26 +1,45 @@
 {
   "voters": [
     {
-      "id": "",
-      "firstname": "",
-      "lastname": "",
-      "address": "",
-      "county_city": "",
-      "birthdate": "",
-      "email": "",
-      "phone": ""
+      "id": "1",
+      "email": "hema_kothari@intuit.com",
+      "firstname": "Hema",
+      "lastname": "Kothari",
+      "address": "2600 Marine Way",
+      "county_city": "MV",
+      "birthdate": "01/01/2020",
+      "phone": "6509446000"
     },
-
+    {
+      "id": "2",
+      "email": "Divya_Kommineni@intuit.com",
+      "firstname": "Divya",
+      "lastname": "Kommineni",
+      "address": "7555 Torrey Santa Fe Rd",
+      "county_city": "San Diego",
+      "birthdate": "02/01/2020",
+      "phone": "8582150000"
+    },
+    {
+      "id": "3",
+      "email": "phillip_hill@intuit.com",
+      "firstname": "Phillip",
+      "lastname": "Hill",
+      "address": "7555 Torrey Santa Fe Rd",
+      "county_city": "San Diego",
+      "birthdate": "03/01/2020",
+      "phone": "8582150000"
+    }
   ],
   "ballots": [
     {
       "id": "",
       "election_id": "",
       "voter_id": "",
-      "question":  {
+      "questions": [{
         "id": "",
         "answer": ""
-      }
+      }]
     }
   ],
   "elections": [
@@ -33,56 +52,6 @@
           "question": ""
         }
       ]
-    }
-  ],
-  "colors": [
-    {
-      "id": 1,
-      "name": "red",
-      "hexcode": "#ff0000"
-    },
-    {
-      "id": 2,
-      "name": "green",
-      "hexcode": "#00ff00"
-    },
-    {
-      "id": 3,
-      "name": "blue",
-      "hexcode": "#0000ff"
-    },
-    {
-      "name": "purple",
-      "hexcode": "#FF00FF",
-      "id": 4
-    },
-    {
-      "name": "purple",
-      "hexcode": "#FF00FF",
-      "id": 5
-    },
-    {
-      "name": "purple",
-      "hexcode": "#FF00FF",
-      "id": 6
-    }
-  ],
-  "cars": [
-    {
-      "id": 1,
-      "make": "Ford",
-      "model": "Fusion Hybrid",
-      "year": 2019,
-      "color": "blue",
-      "price": 45000
-    },
-    {
-      "id": 2,
-      "make": "Tesla",
-      "model": "S",
-      "year": 2018,
-      "color": "red",
-      "price": 100000
     }
   ]
 }
