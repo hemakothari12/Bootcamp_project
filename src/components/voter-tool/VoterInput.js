@@ -5,7 +5,7 @@ import { useForm } from '../../hooks/useForm';
 export const VoterInput = ({ buttonText, onVerifyUser, elections }) => {
 
     const [ electionForm, change, resetElectionForm ] = useForm({
-        election_name: '', voter_email: '',
+        election_id: '', voter_email: '',
     });
 
     const submitElection = () => {
@@ -17,7 +17,7 @@ export const VoterInput = ({ buttonText, onVerifyUser, elections }) => {
         <form>
             <div>
                 <label htmlFor="election-name-dropdown">Election Name:</label>
-                <select name="election_name" onChange={change}>
+                <select name="election_id" onChange={change}>
                     <option>Select an Election</option>
                     {elections.map(e => <option key={e.id}
                                                 value={e.id}

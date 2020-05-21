@@ -1,8 +1,11 @@
 import {
-  REFRESH_ELECTION_DONE_ACTION,
+  REFRESH_ELECTION_DONE_ACTION, REFRESH_ELECTION_REQUEST_ACTION,
+    VOTE_ELECTION_ACTION, VERIFY_USER_VOTED_REQUEST_ACTION,
+    VERIFY_USER_REQUEST_ACTION
 } from '../actions/electionActions';
+import { combineReducers } from "redux";
 
-export const electionReducer = (elections = [], action) => {
+export const electionsReducer = (elections = [], action) => {
 
   if (action.type === REFRESH_ELECTION_DONE_ACTION) {
     return action.elections;
@@ -11,3 +14,22 @@ export const electionReducer = (elections = [], action) => {
   return elections;
 
 };
+
+export const editElectionIdReducer = (editElectionId = -1, action) => {
+
+  if (action.type === VOTE_ELECTION_ACTION) {
+    return 1;
+  }
+
+  if ([ REFRESH_ELECTION_DONE_ACTION, VERIFY_USER_REQUEST_ACTION, VERIFY_USER_REQUEST_ACTION, REFRESH_ELECTION_REQUEST_ACTION].includes(action.type)) {
+    return -1;
+  }
+
+  return editElectionId;
+
+};
+
+export const electionReducer = combineReducers({
+  editElectionId: editElectionIdReducer,
+  elections: electionsReducer,
+});

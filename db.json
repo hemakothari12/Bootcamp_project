@@ -34,8 +34,8 @@
   "ballots": [
     {
       "id": "1",
-      "election_name": "1",
-      "user_email": "444",
+      "election_id": "1",
+      "user_email": "hema_kothari@intuit.com",
       "questions": [
         {
           "id": "1",
