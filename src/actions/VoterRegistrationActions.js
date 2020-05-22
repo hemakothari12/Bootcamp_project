@@ -14,23 +14,64 @@ export const createNavigateAction = navigation => ({ type: NAVIGATE, navigation 
 
 export const refreshVoters = () => {
     return dispatch => {
-        //dispatch(createRefreshVotersAction());
         return fetch('http://localhost:3060/voters')
         .then(res => res.json())
         .then(voters => dispatch(createRefreshVotersAction(voters)));
     }
-  
   };
 
-  /*export const navigate = navigation => {
-    console.log(navigation);  
-    return dispatch => {
-        dispatch(createNavigateAction(navigation));
-    };
-  };*/
-
   export const navigate = navigation => {
-    console.log(navigation);  
+    console.log(navigation);
+    return dispatch => {
+        return fetch('http://localhost:3060/voters')
+        .then(res => res.json())
+        .then(voters => dispatch(createRefreshVotersAction(voters)))
+        .then(() => dispatch(createNavigateAction(navigation)));
+    };
+  };
+
+  export const addVoter = navigation => {
+    console.log(navigation);
+    return dispatch => {
+        return fetch('http://localhost:3060/voters')
+        .then(res => res.json())
+        .then(voters => dispatch(createRefreshVotersAction(voters)))
+        .then(() => dispatch(createNavigateAction(navigation)));
+    };
+  };
+
+  export const saveVoter = navigation => {
+    console.log(navigation);
+    return dispatch => {
+        return fetch('http://localhost:3060/voters')
+        .then(res => res.json())
+        .then(voters => dispatch(createRefreshVotersAction(voters)))
+        .then(() => dispatch(createNavigateAction(navigation)));
+    };
+  };
+
+  export const deleteVoter = navigation => {
+    console.log(navigation);
+    return dispatch => {
+        return fetch('http://localhost:3060/voters')
+        .then(res => res.json())
+        .then(voters => dispatch(createRefreshVotersAction(voters)))
+        .then(() => dispatch(createNavigateAction(navigation)));
+    };
+  };
+
+  export const editVoter = navigation => {
+    console.log(navigation);
+    return dispatch => {
+        return fetch('http://localhost:3060/voters')
+        .then(res => res.json())
+        .then(voters => dispatch(createRefreshVotersAction(voters)))
+        .then(() => dispatch(createNavigateAction(navigation)));
+    };
+  };
+
+  export const cancelVoter = navigation => {
+    console.log(navigation);
     return dispatch => {
         return fetch('http://localhost:3060/voters')
         .then(res => res.json())

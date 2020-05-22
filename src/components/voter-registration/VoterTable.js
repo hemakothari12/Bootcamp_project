@@ -3,12 +3,8 @@ import React from 'react';
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from './VoterEditRow';
 
-export const VoterTable = (
-  {
-    voters, editVoterId,
-    onEditVoter: editVoter, onDeleteVoter: deleteVoter,
-    onSaveVoter: saveVoter, onCancelVoter: cancelVoter,
-  }) => {
+export const VoterTable = ({ voters, editVoterId, onEditVoter: editVoter,
+  onDeleteVoter: deleteVoter, onSaveVoter: saveVoter, onCancelVoter: cancelVoter, }) => {
 
   return (
     <table>
