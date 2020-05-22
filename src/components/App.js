@@ -15,8 +15,9 @@ import { AboutPage } from './pages/AboutPage';
 import { VotePageContainer } from "./containers/VoterPageContainer";
 import {electionStore} from "../store/electionStore";
 
-export const App = () => {
+import { VoterRegistrationPage } from './pages/VoterRegistrationPage';
 
+export const App = () => {
   return (
       <PageLayout>
         <PageHeader />
@@ -33,6 +34,8 @@ export const App = () => {
                 <Provider store={electionStore}>
                     <VotePageContainer />
                 </Provider>
+            <Route path="/registration">
+              <VoterRegistrationPage />
             </Route>
           </Switch>
         </Content>
