@@ -2,7 +2,7 @@
   "voters": [
     {
       "id": "1",
-      "email": "hema_kothari@intuit.com",
+      "email": "444",
       "firstname": "Hema",
       "lastname": "Kothari",
       "address": "2600 Marine Way",
@@ -35,7 +35,7 @@
     {
       "id": "1",
       "election_id": "1",
-      "voter_id": "1",
+      "user_email": "444",
       "questions": [
         {
           "id": "1",
@@ -50,11 +50,26 @@
           "answer": true
         }
       ]
+    },
+    {
+      "election_id": "2",
+      "user_email": "444",
+      "question": [
+        {
+          "id": "1",
+          "answer": true
+        },
+        {
+          "id": "2",
+          "answer": false
+        }
+      ],
+      "id": "vaj7PPh"
     }
   ],
   "elections": [
     {
-      "id":  "1",
+      "id": "1",
       "name": "Jan Election",
       "questions": [
         {
@@ -72,7 +87,7 @@
       ]
     },
     {
-      "id":  "2",
+      "id": "2",
       "name": "Feb Election",
       "questions": [
         {
@@ -86,7 +101,7 @@
       ]
     },
     {
-      "id":  "3",
+      "id": "3",
       "name": "Mar Election",
       "questions": [
         {
