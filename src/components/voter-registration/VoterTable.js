@@ -6,6 +6,8 @@ import { VoterEditRow } from './VoterEditRow';
 export const VoterTable = ({ voters, editVoterId, onEditVoter: editVoter,
   onDeleteVoter: deleteVoter, onSaveVoter: saveVoter, onCancelVoter: cancelVoter, }) => {
 
+  console.log('Do we have something to edit: ' + editVoterId);
+
   return (
     <table>
       <thead>
@@ -24,8 +26,8 @@ export const VoterTable = ({ voters, editVoterId, onEditVoter: editVoter,
       </thead>
       <tbody>
         {voters.map(voter => editVoterId === voter.id
-          ? <VoterEditRow key={voter.id} voter={voter} onSaveCar={saveVoter} onCancelCar={cancelVoter} />
-          : <VoterViewRow key={voter.id} voter={voter} onEditCar={editVoter} onDeleteCar={deleteVoter} />)}
+          ? <VoterEditRow key={voter.id} voter={voter} onSaveVoter={saveVoter} onCancelVoter={cancelVoter} />
+          : <VoterViewRow key={voter.id} voter={voter} onEditVoter={editVoter} onDeleteVoter={deleteVoter} />)}
       </tbody>
     </table>
   );
