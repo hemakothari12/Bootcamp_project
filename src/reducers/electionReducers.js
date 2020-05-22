@@ -1,7 +1,5 @@
 import {
-  REFRESH_ELECTION_DONE_ACTION, REFRESH_ELECTION_REQUEST_ACTION,
-    VOTE_ELECTION_ACTION, VERIFY_USER_VOTED_REQUEST_ACTION,
-    VERIFY_USER_REQUEST_ACTION, FETCH_QUESTIONS_ACTION, SET_VOTER_EMAIL_ACTION
+  REFRESH_ELECTION_DONE_ACTION, VOTE_ELECTION_ACTION, SET_VOTER_EMAIL_ACTION
 } from '../actions/electionActions';
 import { combineReducers } from "redux";
 
@@ -38,5 +36,5 @@ export const voterEmailReducer = (voterEmail = '', action) => {
 export const electionReducer = combineReducers({
   editElectionId: editElectionIdReducer,
   elections: electionsReducer,
-  voterEmail: voterEmailReducer,
+  editVoterEmail: voterEmailReducer,
 });

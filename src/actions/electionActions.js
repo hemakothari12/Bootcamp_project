@@ -28,8 +28,6 @@ export const refreshElection = () => {
 }
 
 export const verifyUser = userDetail => {
-    console.log(userDetail);
-
     return dispatch => {
 
         dispatch(createVerifyUserRequestAction(userDetail));

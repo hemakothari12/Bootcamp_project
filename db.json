@@ -54,7 +54,7 @@
   ],
   "elections": [
     {
-      "id":  "1",
+      "id": "1",
       "name": "Jan Election",
       "questions": [
         {
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "id":  "2",
+      "id": "2",
       "name": "Feb Election",
       "questions": [
         {
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "id":  "3",
+      "id": "3",
       "name": "Mar Election",
       "questions": [
         {

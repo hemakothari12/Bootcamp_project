@@ -9,7 +9,7 @@ export const VotePageContainer = () => {
 
     const elections = useSelector(state => state.elections);
     const electionId = useSelector(state => state.editElectionId);
-    const voterEmail = useSelector(state => state.voterEmail);
+    const voterEmail = useSelector(state => state.editVoterEmail);
 
     const dispatchProps = bindActionCreators({
         onVerifyUser: verifyUser,

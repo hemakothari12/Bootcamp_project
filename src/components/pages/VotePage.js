@@ -17,8 +17,6 @@ export const VotePage = ({
 
     }, []);
 
-    console.log(elections);
-
     return (
         <>
             <header>
