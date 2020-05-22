@@ -12,33 +12,36 @@ export const createDeleteVotersAction = voterIds => ({ type: DELETE_VOTERS, vote
 export const createCancelAction = () => ({ type: CANCEL_VOTER });
 export const createNavigateAction = navigation => ({ type: NAVIGATE, navigation });
 
+const voter_resource = 'http://localhost:3060/voters';
+
 export const refreshVoters = () => {
     return dispatch => {
-        return fetch('http://localhost:3060/voters')
+        return fetch(voter_resource)
         .then(res => res.json())
         .then(voters => dispatch(createRefreshVotersAction(voters)));
     }
-  };
+};
 
-  export const navigate = navigation => {
+export const navigate = navigation => {
     console.log(navigation);
     return dispatch => {
-        return fetch('http://localhost:3060/voters')
+        return fetch(voter_resource)
         .then(res => res.json())
         .then(voters => dispatch(createRefreshVotersAction(voters)))
         .then(() => dispatch(createNavigateAction(navigation)));
     };
-  };
+};
 
-  export const addVoter = navigation => {
-    console.log(navigation);
+export const addVoter = voter => {
+    console.log('Add Voter Action: ' + voter);
     return dispatch => {
-        return fetch('http://localhost:3060/voters')
-        .then(res => res.json())
-        .then(voters => dispatch(createRefreshVotersAction(voters)))
-        .then(() => dispatch(createNavigateAction(navigation)));
+        return fetch(voter_resource, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(voter),
+        }).then(() => dispatch(refreshVoters()));
     };
-  };
+};
 
   export const saveVoter = navigation => {
     console.log(navigation);

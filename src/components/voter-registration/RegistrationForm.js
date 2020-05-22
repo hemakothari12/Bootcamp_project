@@ -34,7 +34,7 @@ export const RegistrationForm = ({ buttonText, onSubmitVoter, onNavigate }) => {
       </div>
       <div>
         <label htmlFor="lastname-input">Lastname:</label>
-        <input type="number" id="lastname-input"
+        <input type="text" id="lastname-input"
           name="lastname" value={registrationForm.lastname} onChange={change} />
       </div>
       <div>
@@ -44,12 +44,12 @@ export const RegistrationForm = ({ buttonText, onSubmitVoter, onNavigate }) => {
       </div>
       <div>
         <label htmlFor="county_city-input">County/City:</label>
-        <input type="number" id="county_city-input"
+        <input type="text" id="county_city-input"
           name="county_city" value={registrationForm.county_city} onChange={change} />
       </div>
       <div>
         <label htmlFor="birthdate-input">Birthdate:</label>
-        <input type="number" id="birthdate-input"
+        <input type="text" id="birthdate-input"
           name="birthdate" value={registrationForm.birthdate} onChange={change} />
       </div>
       <div>
