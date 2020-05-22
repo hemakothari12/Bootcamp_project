@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {VotePage} from "../pages/VotePage";
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { verifyUser, refreshElection, castVote} from '../../actions/electionActions';
+import { verifyUser, refreshElection, castVote, createSetHasVoteCastedAction} from '../../actions/electionActions';
 import {SuccessScreen} from "../voter-tool/SucessScreen";
 
 export const VotePageContainer = () => {
+
+    useEffect(() => {
+
+        createSetHasVoteCastedAction();
+
+    }, []);
 
     const elections = useSelector(state => state.elections);
     const electionId = useSelector(state => state.editElectionId);
@@ -17,6 +23,7 @@ export const VotePageContainer = () => {
         onVerifyUser: verifyUser,
         onRefreshElection: refreshElection,
         onCastVote: castVote,
+        onSetHasVotedOnLoad: createSetHasVoteCastedAction
     }, useDispatch());
 
     console.log(hasVoteCasted);
@@ -24,5 +31,5 @@ export const VotePageContainer = () => {
     return hasVoteCasted === false
         ? <VotePage {...dispatchProps} elections={elections} electionId={electionId}
                      voterEmail={voterEmail} />
-        : <SuccessScreen />
+        : <SuccessScreen {...dispatchProps} />
 };

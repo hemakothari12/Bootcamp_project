@@ -9,11 +9,13 @@ export const VotePage = ({
     onRefreshElection,
     onVerifyUser: verifyUser,
     onCastVote: castVote,
+    onSetHasVotedOnLoad,
 }) => {
 
     useEffect(() => {
 
         onRefreshElection();
+        onSetHasVotedOnLoad();
 
     }, []);
 

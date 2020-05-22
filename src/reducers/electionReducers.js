@@ -1,6 +1,7 @@
 import {
   REFRESH_ELECTION_DONE_ACTION, VOTE_ELECTION_ACTION,
   SET_VOTER_EMAIL_ACTION, CAST_VOTE_ACTION,
+  SET_HAS_VOTE_CASTED_ACTION,
 } from '../actions/electionActions';
 import { combineReducers } from "redux";
 
@@ -45,6 +46,10 @@ export const voterEmailReducer = (voterEmail = '', action) => {
 export const hasVoteCastedReducer = (hasVoteCasted = false, action) => {
   if (action.type === CAST_VOTE_ACTION) {
     return true;
+  }
+
+  if (action.type === SET_HAS_VOTE_CASTED_ACTION || action.type === REFRESH_ELECTION_DONE_ACTION) {
+    return false;
   }
 
   return hasVoteCasted;
