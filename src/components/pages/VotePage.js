@@ -22,7 +22,7 @@ export const VotePage = ({
     return (
         <>
             <header>
-                <h2>Vote</h2>
+                <h2>Cast Vote</h2>
             </header>
 
             <section>
