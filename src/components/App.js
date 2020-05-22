@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import {
   Switch, Route,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
 
 import { PageLayout } from './blocks/PageLayout';
 import { PageHeader } from './blocks/PageHeader';
