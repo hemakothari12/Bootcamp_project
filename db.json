@@ -28,7 +28,17 @@
       "address": "7555 Torrey Santa Fe Rd",
       "county_city": "San Diego",
       "birthdate": "03/01/2020",
-      "phone": "8582150000"
+      "phone": 8582150001
+    },
+    {
+      "email": "abcd@tester.com",
+      "firstname": "Test",
+      "lastname": "Voter",
+      "address": "2232 River Run Dr",
+      "county_city": "San Diego",
+      "birthdate": "08/08/2019",
+      "phone": 123456789,
+      "id": "MS8AKZ0"
     }
   ],
   "ballots": [
@@ -54,7 +64,7 @@
   ],
   "elections": [
     {
-      "id":  "1",
+      "id": "1",
       "name": "Jan Election",
       "questions": [
         {
@@ -72,7 +82,7 @@
       ]
     },
     {
-      "id":  "2",
+      "id": "2",
       "name": "Feb Election",
       "questions": [
         {
@@ -86,7 +96,7 @@
       ]
     },
     {
-      "id":  "3",
+      "id": "3",
       "name": "Mar Election",
       "questions": [
         {

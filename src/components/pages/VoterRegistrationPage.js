@@ -3,8 +3,12 @@ import React from 'react';
 import { ViewRegisteredVotersPageContainer, RegisterAVoterPageContainer } from '../../containers/VoterRegistrationContainer';
 
 
-export const VoterRegistrationPage = ({voters, navigation, onRefreshVoters,
+export const VoterRegistrationPage = ({voters, navigation, editVoterId, onRefreshVoters,
     onNavigate, onAddVoter, onSaveVoter, onDeleteVoter, onEditVoter, onCancelVoter, }) => {
+
+    /*useEffect(() => {
+        onRefreshVoters(voters);
+    }, []);*/
 
     const main_page_nav = '/registration';
     const register_nav = '/register';
@@ -21,6 +25,8 @@ export const VoterRegistrationPage = ({voters, navigation, onRefreshVoters,
         console.log('Let\'s view the voter registry!');
         onNavigate(voters_nav);
     };
+
+    console.log('What is this? ' + editVoterId);
     
     if(navigation === main_page_nav) {
         return (
@@ -41,7 +47,7 @@ export const VoterRegistrationPage = ({voters, navigation, onRefreshVoters,
     } else if (navigation === register_nav) {
         return <RegisterAVoterPageContainer {...functions} voters={voters} navigation={navigation}/>;
     } else if (navigation === voters_nav) {
-        return <ViewRegisteredVotersPageContainer {...functions} voters={voters} navigation={navigation}/>;
+        return <ViewRegisteredVotersPageContainer {...functions} voters={voters} navigation={navigation} editVoterId={editVoterId}/>;
     } else {
         return (
             <header>

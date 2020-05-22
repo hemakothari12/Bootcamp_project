@@ -13,6 +13,7 @@ export const ViewRegisteredVotersPageContainer = () => {
 
     const voters = useSelector(state => state.voters);
     const navigation = useSelector(state => state.navigation);
+    const editVoterId = useSelector(state => state.editVoterId);
 
     const dispatchProps = bindActionCreators({
       onRefreshVoters: refreshVoters,
@@ -24,13 +25,14 @@ export const ViewRegisteredVotersPageContainer = () => {
       onCancelVoter: cancelVoter,
     }, useDispatch());
 
-    return <ViewRegisteredVotersPage {...dispatchProps} voters={voters} navigation={navigation} />;
+    return <ViewRegisteredVotersPage {...dispatchProps} voters={voters} navigation={navigation} editVoterId={editVoterId} />;
 };
 
 export const RegisterAVoterPageContainer = () => {
 
   const voters = useSelector(state => state.voters);
   const navigation = useSelector(state => state.navigation);
+  const editVoterId = useSelector(state => state.editVoterId);
 
   const dispatchProps = bindActionCreators({
     onRefreshVoters: refreshVoters,
@@ -42,13 +44,14 @@ export const RegisterAVoterPageContainer = () => {
     onCancelVoter: cancelVoter,
   }, useDispatch());
 
-  return <RegisterAVoterPage {...dispatchProps} voters={voters} navigation={navigation} />;
+  return <RegisterAVoterPage {...dispatchProps} voters={voters} navigation={navigation} editVoterId={editVoterId} />;
 };
 
 export const VoterRegistrationPageContainer = () => {
 
   const voters = useSelector(state => state.voters);
   const navigation = useSelector(state => state.navigation);
+  const editVoterId = useSelector(state => state.editVoterId);
 
   const dispatchProps = bindActionCreators({
     onRefreshVoters: refreshVoters,
@@ -60,5 +63,5 @@ export const VoterRegistrationPageContainer = () => {
     onCancelVoter: cancelVoter,
   }, useDispatch());
 
-  return <VoterRegistrationPage {...dispatchProps} voters={voters} navigation={navigation} />;
+  return <VoterRegistrationPage {...dispatchProps} voters={voters} navigation={navigation} editVoterId={editVoterId}/>;
 };
