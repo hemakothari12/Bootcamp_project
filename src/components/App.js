@@ -27,18 +27,12 @@ export const App = () => {
           </Provider>
         <Content>
           <Switch>
-            <Route path="/" exact>
-              <HomePage />
-            </Route>
-            <Route path="/about">
-              <AboutPage />
-            </Route>
             <Route path="/vote">
                 <Provider store={electionStore}>
                     <VotePageContainer />
                 </Provider>
             </Route>
-            <Route path="/registration">
+            <Route path="/">
             <Provider store={voterRegistrationStore}>
               <VoterRegistrationPageContainer />
               </Provider>
@@ -46,9 +40,6 @@ export const App = () => {
           </Switch>
         </Content>
         <Switch>
-          <Route path="/about">
-            <Sidebar className="about-page" />
-          </Route>
           <Route path="/">
             <Sidebar className="home-page" />
           </Route>

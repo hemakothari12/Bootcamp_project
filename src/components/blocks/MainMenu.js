@@ -7,11 +7,8 @@ export const MainMenu = ({ onSetHasVotedOnLoad }) => {
 
   // ui model data
   const menuItems = [
-    { id: 1, url: '/', caption: 'Home' },
-    { id: 2, url: '/about', caption: 'About' },
-    { id: 3, url: '/vote', caption: 'Vote' },
-    { id: 4, url: '/registration', caption: 'Voter Registration' },
-
+    { id: 1, url: '/', caption: 'Voter Registration' },
+    { id: 2, url: '/vote', caption: 'Cast Vote' },
   ];
 
   return (

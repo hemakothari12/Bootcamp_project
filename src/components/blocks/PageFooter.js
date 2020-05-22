@@ -8,7 +8,7 @@ export const PageFooter = () => {
 
     return (
       <footer id="page-footer">
-        <small>&copy; { currentYear } Cool Company, Inc. All Rights Reserved.</small>
+        <small>&copy; { currentYear } Minions Company, Inc. All Rights Reserved.</small>
       </footer>
     );
 
