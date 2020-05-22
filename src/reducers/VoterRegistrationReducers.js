@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
 
-import { NAVIGATE, REFRESH_VOTERS, ADD_VOTER, 
-    EDIT_VOTER, DELETE_VOTERS, CANCEL_VOTER, SAVE_VOTER
+import { NAVIGATE, REFRESH_VOTERS, EDIT_VOTER, CANCEL_VOTER, SAVE_VOTER
 } from '../actions/VoterRegistrationActions';
 
 const voterReducer = (voters = [], action) => {

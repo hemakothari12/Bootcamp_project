@@ -32,7 +32,7 @@ export const VoterRegistrationPage = ({voters, navigation, editVoterId, onRefres
         return (
             <>
               <header>
-                <h2>Voter Registration Hub</h2>
+                <h2>Voter Registration</h2>
               </header>
 
               <section>

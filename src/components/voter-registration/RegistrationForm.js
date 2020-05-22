@@ -13,6 +13,7 @@ export const RegistrationForm = ({ buttonText, onSubmitVoter, onNavigate }) => {
   const submitVoter = () => {
     onSubmitVoter({ ...registrationForm });
     resetRegistrationForm();
+    onNavigate(main_page_nav);
   };
 
   const goMainPage = () => {

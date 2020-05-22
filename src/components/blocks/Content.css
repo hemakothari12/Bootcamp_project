@@ -3,7 +3,7 @@
 }
 
 #content > header {
-  background-color: gray;
+  background-color: gold;
   color: white;
   padding: 10px;
 }
@@ -15,4 +15,5 @@
 #sidebar {
   grid-area: sidebar;
   background-size: cover;
+  background-image: url(../../images/Team-2.jpg);
 }

@@ -10,7 +10,7 @@ export const createRefreshVotersAction = voters => ({ type: REFRESH_VOTERS, vote
 export const createAddVoterAction = voter => ({ type: ADD_VOTER, voter });
 export const createEditVoterAction = editVoterId => ({ type: EDIT_VOTER, editVoterId });
 export const createSaveVoterAction = () => ({ type: SAVE_VOTER });
-export const createDeleteVotersAction = voterIds => ({ type: DELETE_VOTERS, voterIds });
+export const createDeleteVotersAction = voterId => ({ type: DELETE_VOTERS, voterId });
 export const createCancelAction = () => ({ type: CANCEL_VOTER });
 export const createNavigateAction = navigation => ({ type: NAVIGATE, navigation });
 
@@ -35,7 +35,6 @@ export const navigate = navigation => {
 };
 
 export const addVoter = voter => {
-    console.log('Add Voter Action: ' + voter);
     return dispatch => {
         return fetch(voter_resource, {
             method: 'POST',
@@ -59,7 +58,6 @@ export const cancelVoter = () => {
 };
 
 export const saveVoter = voter => {
-    console.log(voter);
     return dispatch => {
         return fetch(voter_resource + '/' + encodeURIComponent(voter.id), {
             method: 'PUT',
@@ -71,15 +69,14 @@ export const saveVoter = voter => {
     };
 };
 
-  export const deleteVoter = navigation => {
-    console.log(navigation);
+export const deleteVoter = voterId => {
     return dispatch => {
-        return fetch('http://localhost:3060/voters')
-        .then(res => res.json())
-        .then(voters => dispatch(createRefreshVotersAction(voters)))
-        .then(() => dispatch(createNavigateAction(navigation)));
+        return fetch(voter_resource + '/' + encodeURIComponent(voterId), {
+            method: 'DELETE',
+        })
+        .then(() => dispatch(refreshVoters()));
     };
-  };
+};
 
 
 
