@@ -12,3 +12,7 @@ label {
     display: inline-block;
     text-align: left;
 }
+
+h2 {
+    color: blue;
+}
