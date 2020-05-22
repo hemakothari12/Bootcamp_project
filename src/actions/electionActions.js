@@ -22,7 +22,7 @@ export const refreshElection = () => {
       dispatch(createRefreshElectionRequestRequestAction);
       return fetch('http://localhost:3060/elections')
           .then(res => res.json())
-          .then(elections => dispatch(createRefreshElectionDoneRequestAction(elections)));
+          .then(elections => dispatch(createRefreshElectionDoneRequestAction(elections)))
     };
 
 }

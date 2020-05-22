@@ -1,5 +1,6 @@
 import {
-  REFRESH_ELECTION_DONE_ACTION, VOTE_ELECTION_ACTION, SET_VOTER_EMAIL_ACTION
+  REFRESH_ELECTION_DONE_ACTION, VOTE_ELECTION_ACTION,
+  SET_VOTER_EMAIL_ACTION, CAST_VOTE_ACTION,
 } from '../actions/electionActions';
 import { combineReducers } from "redux";
 
@@ -19,6 +20,10 @@ export const editElectionIdReducer = (editElectionId = -1, action) => {
     return action.electionId;
   }
 
+  if (action.type === CAST_VOTE_ACTION) {
+    return -1;
+  }
+
   return editElectionId;
 
 };
@@ -29,12 +34,25 @@ export const voterEmailReducer = (voterEmail = '', action) => {
     return action.voterEmail;
   }
 
+  if (action.type === CAST_VOTE_ACTION) {
+    return '';
+  }
+
   return voterEmail;
 
+}
+
+export const hasVoteCastedReducer = (hasVoteCasted = false, action) => {
+  if (action.type === CAST_VOTE_ACTION) {
+    return true;
+  }
+
+  return hasVoteCasted;
 }
 
 export const electionReducer = combineReducers({
   editElectionId: editElectionIdReducer,
   elections: electionsReducer,
   editVoterEmail: voterEmailReducer,
+  hasVoteCasted: hasVoteCastedReducer,
 });

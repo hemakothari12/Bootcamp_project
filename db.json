@@ -50,6 +50,32 @@
           "answer": true
         }
       ]
+    },
+    {
+      "election_id": "2",
+      "user_email": "444",
+      "question": [
+        {
+          "id": "1",
+          "answer": true
+        },
+        {
+          "id": "2",
+          "answer": false
+        }
+      ],
+      "id": "QVxh2x9"
+    },
+    {
+      "election_id": "3",
+      "user_email": "444",
+      "question": [
+        {
+          "id": "1",
+          "answer": true
+        }
+      ],
+      "id": "JUQymjT"
     }
   ],
   "elections": [
