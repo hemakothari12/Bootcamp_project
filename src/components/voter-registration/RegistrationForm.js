@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../pages/VoterRegistration.module.css'; 
+
 import { useForm } from '../../hooks/useForm'
  
 export const RegistrationForm = ({ buttonText, onSubmitVoter, onNavigate }) => {
@@ -22,7 +24,7 @@ export const RegistrationForm = ({ buttonText, onSubmitVoter, onNavigate }) => {
   };
 
   return (
-    <form>
+    <form className={styles.voterRegistration}>
       <div>
         <label htmlFor="email-input">Email:</label>
         <input type="text" id="email-input"

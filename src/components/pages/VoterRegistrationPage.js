@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './VoterRegistration.module.css'; 
+
 import { ViewRegisteredVotersPageContainer, RegisterAVoterPageContainer } from '../../containers/VoterRegistrationContainer';
 
 
@@ -35,10 +37,10 @@ export const VoterRegistrationPage = ({voters, navigation, editVoterId, onRefres
                 <h2>Voter Registration</h2>
               </header>
 
-              <section className="voterRegistration">
+              <section className={styles.voterRegistration}>
                 <p>Welcome to the Voter Registration Hub! Below, you can find functions for managing the voter registry.</p>
                 <div>
-                    <button type="button" onClick={goRegisterAVoter}>Register Voter</button>
+                    <button type="button" id="go" onClick={goRegisterAVoter}>Register Voter</button>
                     <button type="button" onClick={goViewRegistrations}>View Registered Voters</button>
                 </div>
               </section>

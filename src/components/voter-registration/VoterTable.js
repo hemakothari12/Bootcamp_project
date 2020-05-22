@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './VoterTable.module.css'; 
+import styles from '../pages/VoterRegistration.module.css'; 
 
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from './VoterEditRow';

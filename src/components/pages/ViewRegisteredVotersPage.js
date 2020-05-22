@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../pages/VoterRegistration.module.css'; 
+
 import { VoterTable } from "../voter-registration/VoterTable"
 
 export const ViewRegisteredVotersPage = ({voters, navigation, editVoterId, onRefreshVoters, 
@@ -18,11 +20,11 @@ export const ViewRegisteredVotersPage = ({voters, navigation, editVoterId, onRef
                 <h2>Voter Registry</h2>
             </header>
 
-            <section>
+            <section className={styles.voterRegistration}>
                 <VoterTable voters={voters} editVoterId={editVoterId} onEditVoter={onEditVoter} onDeleteVoter={onDeleteVoter}
                     onSaveVoter={onSaveVoter} onCancelVoter={onCancelVoter} />
+                <button type="button" onClick={goMainPage}>Cancel/Main Menu</button>
             </section>
-            <button type="button" onClick={goMainPage}>Cancel/Main Menu</button>
         </>
     );
 
