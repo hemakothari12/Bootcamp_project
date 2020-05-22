@@ -1,0 +1,14 @@
+input, select {
+    background-color: beige;
+    padding: 8px 16px;
+    margin: 8px 0;
+    border: 1px solid blue;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label {
+    width: 120px;
+    display: inline-block;
+    text-align: left;
+}

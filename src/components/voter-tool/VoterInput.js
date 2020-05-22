@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useForm } from '../../hooks/useForm';
+import './VoteInput.css';
 
 export const VoterInput = ({ buttonText, onVerifyUser, elections }) => {
 
