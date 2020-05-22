@@ -2,7 +2,9 @@ import React from 'react';
 
 import { useForm } from '../../hooks/useForm'
  
-export const RegistrationForm = ({ buttonText, onSubmitVoter }) => {
+export const RegistrationForm = ({ buttonText, onSubmitVoter, onNavigate }) => {
+
+  const main_page_nav = '/registration';
 
   const [ registrationForm, change, resetRegistrationForm ] = useForm({
     email: '', firstname: '', lastname: '', address: '', county_city: '', birthdate: '', phone: '',
@@ -11,6 +13,11 @@ export const RegistrationForm = ({ buttonText, onSubmitVoter }) => {
   const submitVoter = () => {
     onSubmitVoter({ ...registrationForm });
     resetRegistrationForm();
+  };
+
+  const goMainPage = () => {
+    console.log('Let\'s return to the main page!');
+    onNavigate(main_page_nav);
   };
 
   return (
@@ -51,6 +58,7 @@ export const RegistrationForm = ({ buttonText, onSubmitVoter }) => {
           name="phone" value={registrationForm.phone} onChange={change} />
       </div>
       <button type="button" onClick={submitVoter}>{buttonText}</button>
+      <button type="button" onClick={goMainPage}>Cancel/Main Menu</button>
     </form>
   );
 

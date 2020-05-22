@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import {
   Switch, Route,
 } from 'react-router-dom';
@@ -12,7 +13,8 @@ import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 
-import { VoterRegistrationPage } from './pages/VoterRegistrationPage';
+import { VoterRegistrationPageContainer } from '../containers/VoterRegistrationContainer';
+import { voterRegistrationStore } from '../stores/VoterRegistrationStore'
 
 export const App = () => {
   return (
@@ -28,7 +30,9 @@ export const App = () => {
               <AboutPage />
             </Route>
             <Route path="/registration">
-              <VoterRegistrationPage />
+            <Provider store={voterRegistrationStore}>
+              <VoterRegistrationPageContainer />
+              </Provider>
             </Route>
           </Switch>
         </Content>
