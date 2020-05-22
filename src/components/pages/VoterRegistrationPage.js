@@ -1,33 +1,58 @@
 import React from 'react';
 
-//import { RegisterAVoterPage } from './RegisterAVoterPage';
-//import { ViewRegisteredVotersPage } from './ViewRegisteredVotersPage';
+import { ViewRegisteredVotersPageContainer, RegisterAVoterPageContainer } from '../../containers/VoterRegistrationContainer';
 
-const goRegisterAVoter = () => {
-    console.log('Let\'s register a voter!');
-};
 
-const goViewRegistrations = () => {
-    console.log('Let\'s view the voter registry!');
-};
+export const VoterRegistrationPage = ({voters, navigation, onRefreshVoters, onNavigate,}) => {
 
-export const VoterRegistrationPage = () => {
+    const main_page_nav = '/registration';
+    const register_nav = '/register';
+    const voters_nav = '/voters'
+    console.log(navigation);
+    console.log(voters);
 
-    return (
-        <>
-          <header>
-            <h2>Voter Registration Hub</h2>
-          </header>
+    const goRegisterAVoter = () => {
+        console.log('Let\'s register a voter!');
+        onNavigate(register_nav);
+        
+    };
     
-          <section>
-            <p>Welcome to the Voter Registration Hub! Below, you can find functions for managing the voter registry.</p>
-            <div>
-                <button type="button" onClick={goRegisterAVoter}>Register Voter</button>
-                <button otype="button" onClick={goViewRegistrations}>View Registered Voters</button>
-            </div>
-          </section>
-        </>
-      );
-
-
+    const goViewRegistrations = () => {
+        console.log('Let\'s view the voter registry!');
+        onNavigate(voters_nav);
+    };
+    
+    if(navigation === main_page_nav) {
+        return (
+            <>
+              <header>
+                <h2>Voter Registration Hub</h2>
+              </header>
+        
+              <section>
+                <p>Welcome to the Voter Registration Hub! Below, you can find functions for managing the voter registry.</p>
+                <div>
+                    <button type="button" onClick={goRegisterAVoter}>Register Voter</button>
+                    <button type="button" onClick={goViewRegistrations}>View Registered Voters</button>
+                </div>
+              </section>
+            </>
+        );
+    } else if (navigation === register_nav) {
+        return <RegisterAVoterPageContainer />;
+    } else if (navigation === voters_nav) {
+        return <ViewRegisteredVotersPageContainer voters={voters} />;
+    } else {
+        return (
+            <>
+              <header>
+                <h2>Opps!!</h2>
+              </header>
+        
+              <section>
+                <p>Not a valid route.</p>
+              </section>
+            </>
+          );
+    }
 };
