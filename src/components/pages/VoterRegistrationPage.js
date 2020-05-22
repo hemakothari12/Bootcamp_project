@@ -35,7 +35,7 @@ export const VoterRegistrationPage = ({voters, navigation, editVoterId, onRefres
                 <h2>Voter Registration</h2>
               </header>
 
-              <section>
+              <section className="voterRegistration">
                 <p>Welcome to the Voter Registration Hub! Below, you can find functions for managing the voter registry.</p>
                 <div>
                     <button type="button" onClick={goRegisterAVoter}>Register Voter</button>

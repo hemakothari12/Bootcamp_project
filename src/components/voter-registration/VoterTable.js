@@ -1,15 +1,15 @@
 import React from 'react';
 
+import styles from './VoterTable.module.css'; 
+
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from './VoterEditRow';
 
 export const VoterTable = ({ voters, editVoterId, onEditVoter: editVoter,
   onDeleteVoter: deleteVoter, onSaveVoter: saveVoter, onCancelVoter: cancelVoter, }) => {
-
-  console.log('Do we have something to edit: ' + editVoterId);
-
+    
   return (
-    <table>
+    <table className={styles.voterTable}>
       <thead>
         <tr>
           <th>Select</th>

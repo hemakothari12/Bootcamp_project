@@ -6,7 +6,6 @@ export const ViewRegisteredVotersPage = ({voters, navigation, editVoterId, onRef
     onNavigate, onAddVoter, onSaveVoter, onDeleteVoter, onEditVoter, onCancelVoter,}) => {
 
     const main_page_nav = '/registration';
-    console.log(editVoterId);
 
     const goMainPage = () => {
         console.log('Let\'s return to the main page!');
