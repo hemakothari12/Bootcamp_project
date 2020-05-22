@@ -24,7 +24,6 @@ export const refreshElection = () => {
       dispatch(createRefreshElectionRequestRequestAction);
       return fetch('http://localhost:3060/elections')
           .then(res => res.json())
-          .then(dispatch(createSetHasVoteCastedAction))
           .then(elections => dispatch(createRefreshElectionDoneRequestAction(elections)));
     };
 

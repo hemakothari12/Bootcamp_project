@@ -50,21 +50,6 @@
           "answer": true
         }
       ]
-    },
-    {
-      "election_id": "2",
-      "user_email": "444",
-      "question": [
-        {
-          "id": "1",
-          "answer": true
-        },
-        {
-          "id": "2",
-          "answer": false
-        }
-      ],
-      "id": "vaj7PPh"
     }
   ],
   "elections": [

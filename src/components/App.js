@@ -7,7 +7,6 @@ import {
 import { PageLayout } from './blocks/PageLayout';
 import { PageHeader } from './blocks/PageHeader';
 import { PageFooter } from './blocks/PageFooter';
-import { MainMenu } from './blocks/MainMenu';
 import { Content } from './blocks/Content';
 import { Sidebar } from './blocks/Sidebar';
 import { HomePage } from './pages/HomePage';
@@ -17,12 +16,15 @@ import {electionStore} from "../store/electionStore";
 
 import { VoterRegistrationPageContainer } from '../containers/VoterRegistrationContainer';
 import { voterRegistrationStore } from '../stores/VoterRegistrationStore'
+import {MainMenuContainer} from "./containers/MainMenuContainer";
 
 export const App = () => {
   return (
       <PageLayout>
         <PageHeader />
-        <MainMenu />
+          <Provider store={electionStore}>
+              <MainMenuContainer />
+          </Provider>
         <Content>
           <Switch>
             <Route path="/" exact>

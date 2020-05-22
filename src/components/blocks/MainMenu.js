@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './MainMenu.css';
 
-export const MainMenu = () => {
+export const MainMenu = ({ onSetHasVotedOnLoad }) => {
 
   // ui model data
   const menuItems = [
@@ -18,7 +18,7 @@ export const MainMenu = () => {
     <nav id="main-menu">
       <ul>
         {menuItems.map(menuItem => <li key={menuItem.id}>
-          <Link to={menuItem.url}>{menuItem.caption}</Link>
+          <Link to={menuItem.url} onClick={onSetHasVotedOnLoad}>{menuItem.caption}</Link>
         </li>)}
       </ul>
     </nav>
